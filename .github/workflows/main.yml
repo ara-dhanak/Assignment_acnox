@@ -16,7 +16,11 @@ jobs:
         run: docker build -t aradhanak/wisecow1:latest .
 
       - name: Log in to DockerHub
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
       - name: Push Docker image to DockerHub
         run: docker push aradhanak/wisecow1:latest
