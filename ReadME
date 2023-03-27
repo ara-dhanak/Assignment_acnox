@@ -1,1 +1,4 @@
-#Docker File is created.
+#Docker File is created 
+#Docker hub credentials are encrypted and hardcoding details works with successfull build 
+#execution.
+#Docker image has been pushed to dockerhub registry
