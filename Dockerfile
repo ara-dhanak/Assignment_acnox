@@ -1,5 +1,4 @@
 FROM alpine:latest
-RUN apk add --no-cache fortune cowsay netcat-openbsd
+RUN apk add --no-cache fortune 
 COPY wisecow.sh /
-EXPOSE 4499
 CMD ["/wisecow.sh"]
